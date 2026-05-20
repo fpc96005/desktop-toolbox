@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>扫雷 - 排行榜</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-wrapper">
+    <!-- Header -->
+    <div class="game-header">
+      <div class="header-left">
+        <h1>💣 扫雷</h1>
+      </div>
+      <div class="header-right">
+        <span id="userBadge" class="user-badge hidden">
+          <span class="avatar" id="avatarLetter"></span>
+          <span id="displayName"></span>
+        </span>
+        <button id="logoutBtn" class="btn btn-small btn-secondary hidden">退出</button>
+        <button id="loginBtn" class="btn btn-small btn-secondary">登录</button>
+      </div>
+    </div>
+
+    <!-- Control Bar -->
+    <div class="control-bar">
+      <div class="difficulty-selector">
+        <button class="diff-btn active" data-diff="0">😊 初级</button>
+        <button class="diff-btn" data-diff="1">🙂 中级</button>
+        <button class="diff-btn" data-diff="2">😈 高级</button>
+      </div>
+      <div class="stats">
+        <div class="stat-item">
+          <span class="stat-icon">💣</span>
+          <span class="stat-value" id="mineCount">10</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-icon">⏱</span>
+          <span class="stat-value" id="timer">0</span>
+          <span>秒</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Action Bar -->
+    <div class="action-bar">
+      <button id="hintBtn" class="action-btn">💡 提示</button>
+      <button id="restartBtn" class="action-btn primary">🔄 重新开始</button>
+    </div>
+
+    <!-- Board -->
+    <div class="board-container">
+      <div class="board" id="board"></div>
+    </div>
+
+    <!-- Side Panels -->
+    <div class="side-panels" id="sidePanels">
+      <div class="panel">
+        <h3>🏆 排行榜 <span id="rankTitle">- 全部</span></h3>
+        <div id="rankingContent"></div>
+      </div>
+      <div class="panel">
+        <h3>📊 我的最佳成绩</h3>
+        <div id="myScoresContent"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Win/Lose Overlay -->
+  <div id="overlay" class="overlay hidden">
+    <div class="overlay-box" id="overlayContent"></div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
