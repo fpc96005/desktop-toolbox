@@ -240,6 +240,7 @@ function revealCell(r, c) {
 
   state.revealed = true;
   cellsRevealed++;
+  updateCell(r, c);
 
   if (state.mine) {
     loseGame(r, c);
